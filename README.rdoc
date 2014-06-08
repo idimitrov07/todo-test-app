@@ -1,11 +1,6 @@
-== First change, commit
+== 1.1 First change, commit
 
-<<<<<<< HEAD
-Change in second location, commit
+==2.1 Change in second location, commit
 Unable to push, we need to merge(git pull) first
-=======
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
->>>>>>> 071d8f104a519f201286cccde44d33a825d3aa01
+== 1.2 Change in first location, commit
