@@ -1,3 +1,4 @@
 == README
 
 Change in second location, commit
+Unable to push, we need to merge(git pull) first
