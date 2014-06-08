@@ -4,3 +4,6 @@
 Unable to push, we need to merge(git pull) first
 
 == 1.2 Change in first location, commit
+
+== 2.2 Change in second location, no conflict this time,
+'git pull' before starting
