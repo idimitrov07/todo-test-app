@@ -6,6 +6,7 @@ Odot::Application.routes.draw do
 
   resources :users
   resources :user_sessions, only: [:new, :create]
+  resources :password_resets, only: [:new]
 
 
   resources :todo_lists do
