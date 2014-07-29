@@ -9,7 +9,12 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'spring', group: 'development'
+gem 'foundation-rails', '~> 5.3.1.0'
+
+group :development do
+	gem 'spring'
+	gem 'quiet_assets', '~> 1.0.3'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
