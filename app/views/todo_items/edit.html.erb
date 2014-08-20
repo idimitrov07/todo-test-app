@@ -1,3 +1,5 @@
+<% title "Edit #{@todo_list.title} - #{@todo_item.content}" %>
+
 <h1 class="truncate" title="<%= @todo_list.title %>"><%= @todo_list.title %> - Editing Todo List Item</h1>
 <%= form_for [@todo_list, @todo_item] do |form| %>
   <%= render partial: form %>
