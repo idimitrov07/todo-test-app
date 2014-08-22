@@ -1,5 +1,5 @@
 <%= title "Edit #{@todo_list.title} - #{@todo_item.content}" %>
 
-<%= form_for [@todo_list, @todo_item] do |form| %>
-  <%= render partial: form %>
+<%= form_for [@todo_list, @todo_item], builder: FoundationFormBuilder do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
 <% end %>
