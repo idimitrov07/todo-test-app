@@ -8,8 +8,13 @@ class FoundationFormBuilder < ActionView::Helpers::FormBuilder
   def text_field(attribute, options={})
   	options[:label] ||= attribute
   	label_text ||= options.delete(:label).to_s.titleize
-  	wrapper do 
-  		label(attribute, label_text) + super(attribute, options)
+  	label_options ||= {}
+  	if errors_on?(attribute)
+  		wrapper_options = { wrapper_classes: "error" }
+  	end
+  	wrapper(wrapper_options) do 
+  		label(attribute, label_text, label_options) + 
+  		super(attribute, options) + errors_for_field(attribute)
   	end
   end
 
@@ -23,8 +28,18 @@ class FoundationFormBuilder < ActionView::Helpers::FormBuilder
 
   def wrapper(options={}, &block)
    content_tag(:div, class: "row") do
-  		content_tag(:div, capture(&block), class: "small-12 columns")
+  		content_tag(:div, capture(&block), class: "small-12 columns #{options[:wrapper_classes]}")
   	end
+  end
+
+  def errors_on?(attribute) 
+  	object.errors[attribute].size > 0
+  end
+
+  def errors_for_field(attribute, options={})
+  	return "" if object.errors[attribute].empty?
+  	content_tag(:small, object.errors[attribute].to_sentence.capitalize, 
+  		class: "error")
   end
 
 end
