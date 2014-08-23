@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.0'
 gem 'bcrypt', '~> 3.1.7'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -13,9 +12,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails', '~> 5.3.1.0'
 gem 'font-awesome-rails', '~> 4.1.0.0'
 
+gem 'thin', '~> 1.6.2'
+gem 'pg'
+
 group :development do
 	gem 'spring'
 	gem 'quiet_assets', '~> 1.0.3'
+	gem 'sqlite3'
 end
 
 group :doc do
