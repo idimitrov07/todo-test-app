@@ -10,6 +10,7 @@ Odot::Application.routes.draw do
 
 
   resources :todo_lists do
+    put :email, on: :member
     resources :todo_items do
       member do
         patch :complete
