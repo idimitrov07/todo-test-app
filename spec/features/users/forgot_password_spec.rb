@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Forgotten passwords" do 
+describe "Forgotten passwords" do
 	let(:user) { create(:user) }
 
 	it "sends a user an email" do
@@ -28,7 +28,7 @@ describe "Forgotten passwords" do
 		expect(page.current_path).to eq(todo_lists_path)
 
 		click_link "Sign Out"
-		expect(page).to have_content("You must be logged in to access the page")
+		expect(page).to have_content("You have been logged out.")
 		visit login_path
 		fill_in "Email", with: user.email
 		fill_in "Password", with: "mynewpassword1"
