@@ -12,8 +12,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails', '~> 5.3.1.0'
 gem 'font-awesome-rails', '~> 4.1.0.0'
 
-gem 'thin', '~> 1.6.2'
+gem 'unicorn'
 gem 'pg'
+gem 'newrelic_rpm'
 
 group :development do
 	gem 'spring'
