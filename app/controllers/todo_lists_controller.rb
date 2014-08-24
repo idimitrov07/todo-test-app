@@ -61,7 +61,7 @@ class TodoListsController < ApplicationController
   def email
     destination = params[:to]
     notifier = Notifier.todo_list(@todo_list, destination)
-    if destination =~ /@/ && notifier.deliver
+    if notifier.deliver
       redirect_to todo_list_todo_items_path(@todo_list), success: "Todo list was sent!"
     else
       redirect_to todo_list_todo_items_path(@todo_list), error: "Todo list could not be sent."
