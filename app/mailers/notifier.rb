@@ -1,6 +1,6 @@
 class Notifier < ActionMailer::Base
-	default_url_options[:host] = "localhost:3000"
-  default from: "from@example.com"
+	default_url_options[:host] = "todolistitem.herokuapp.com"
+  default from: "no-reply@todolistitem.herokuapp.com"
 
   def password_reset(user)
   	@user = user
