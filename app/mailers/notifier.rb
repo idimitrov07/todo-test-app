@@ -11,6 +11,6 @@ class Notifier < ActionMailer::Base
 	def todo_list(todo_list, destination)
 		@user = todo_list.user
 		@todo_list = todo_list
-		mail(to: destination, subject: "#{@user.first_name} sent you a todo list.")
+		mail(to: "idimitrov07@gmail.com", subject: "#{@user.first_name} sent you a todo list.")
 	end
 end
