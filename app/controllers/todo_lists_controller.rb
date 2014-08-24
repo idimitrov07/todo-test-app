@@ -59,7 +59,7 @@ class TodoListsController < ApplicationController
   end
 
   def email
-    destination = params[:to]
+    destination = params[:destination]
     notifier = Notifier.todo_list(@todo_list, destination)
     if notifier.deliver
       redirect_to todo_list_todo_items_path(@todo_list), success: "Todo list was sent!"
