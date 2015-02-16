@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140729205757) do
 
-  create_table "todo_items", force: true do |t|
+  create_table "todo_items", force: :cascade do |t|
     t.integer  "todo_list_id"
     t.string   "content"
     t.datetime "created_at"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140729205757) do
 
   add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
 
-  create_table "todo_lists", force: true do |t|
+  create_table "todo_lists", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140729205757) do
 
   add_index "todo_lists", ["user_id"], name: "index_todo_lists_on_user_id"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
