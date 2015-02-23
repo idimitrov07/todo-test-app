@@ -67,7 +67,7 @@ class TodoItemsController < ApplicationController
   end
 
   def find_todo_list
-    @todo_list = current_user.todo_lists.find(params[:todo_list_id])
+    @todo_list = current_user.todo_lists.includes(:todo_items).find(params[:todo_list_id])
   end
 
   def todo_item_params

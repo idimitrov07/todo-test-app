@@ -6,7 +6,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = current_user.todo_lists
+    @todo_lists = current_user.todo_lists.includes(:todo_items)
   end
 
   # GET /todo_lists/new
